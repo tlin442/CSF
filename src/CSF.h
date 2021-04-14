@@ -106,6 +106,13 @@ public:
                       std::vector<int>& offGroundIndexes,
                       bool              exportCloth = false);
 
+    void do_filtering(std::vector<int>& groundIndexes,
+                      std::vector<int>& offGroundIndexes,
+                      std::vector<std::vector<double>>& points,
+                      std::vector<double>& origin,
+                      double& resolution,
+                      bool              exportCloth = false);
+
 private:
 
 #ifdef _CSF_DLL_EXPORT_

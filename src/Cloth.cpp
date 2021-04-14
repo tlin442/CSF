@@ -384,6 +384,17 @@ void Cloth::saveToFile(std::string path) {
     f1.close();
 }
 
+void Cloth::getClothPoints(std::vector<std::vector<double>>& points){
+    for (std::size_t i = 0; i < particles.size(); i++) {
+        std::vector<double> p;
+        p.push_back(particles[i].getPos().f[0]);
+        p.push_back(particles[i].getPos().f[2]);
+        p.push_back(-particles[i].getPos().f[1]);
+
+        points.push_back(p);
+    }
+}
+
 void Cloth::saveMovableToFile(std::string path) {
     std::string filepath = "cloth_movable.txt";
 

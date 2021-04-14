@@ -154,6 +154,8 @@ public:
 
     void saveToFile(std::string path = "");
 
+    void getClothPoints(std::vector<std::vector<double>>& points);
+
     void saveMovableToFile(std::string path = "");
 };
 
