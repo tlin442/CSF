@@ -111,6 +111,8 @@ public:
                       std::vector<std::vector<double>>& points,
                       std::vector<double>& origin,
                       double& resolution,
+                      int& field_width, 
+                      int& field_length,
                       bool              exportCloth = false);
 
 private:

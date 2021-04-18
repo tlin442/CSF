@@ -187,6 +187,8 @@ void CSF::do_filtering(std::vector<int>& groundIndexes,
                       std::vector<std::vector<double>>& points,
                       std::vector<double>& origin,
                       double& resolution,
+                      int& field_width, 
+                      int& field_length,
                       bool              exportCloth){
         // Terrain
     std::cout << "[" << this->index << "] Configuring terrain..." << std::endl;
@@ -216,6 +218,10 @@ void CSF::do_filtering(std::vector<int>& groundIndexes,
     int height_num = static_cast<int>(
         std::floor((bbMax.z - bbMin.z) / params.cloth_resolution)
     ) + 2 * clothbuffer_d;
+
+    // Dump width and height for lazy processing later
+    field_width = width_num;
+    field_length = height_num;
 
     std::cout << "[" << this->index << "] Configuring cloth..." << std::endl;
     std::cout << "[" << this->index << "]  - width: " << width_num << " "
